@@ -1,5 +1,5 @@
 {
-  "name": "actions-status-discord",
+  "name": "actions-status-discord-not-triggered-option",
   "version": "0.0.0",
   "description": "Post Github Actions CI status to Discord",
   "main": "lib/index.js",
