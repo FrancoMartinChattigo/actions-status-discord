@@ -82,6 +82,7 @@ export function getPayload(inputs: Readonly<Inputs>): Object {
     }
 
     if (!inputs.nocontext) {
+
         embed.fields = [
             {
                 name: 'Repository',
@@ -109,6 +110,10 @@ export function getPayload(inputs: Readonly<Inputs>): Object {
                 inline: true
             }
         ]
+    if (!inputs.notriggered) {
+        const filteredFields = embed.fields.filter(field => field.name !== 'Triggered by');
+        embed.fields = filteredFields;      
+            }
     }
 
     let discord_payload: any = {
