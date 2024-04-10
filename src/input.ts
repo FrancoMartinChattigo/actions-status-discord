@@ -14,6 +14,7 @@ export interface Inputs {
     avatar_url: string
     nocontext: boolean
     noprefix: boolean
+    notriggered: boolean
     notimestamp: boolean
 }
 
@@ -54,6 +55,7 @@ export function getInputs(): Inputs {
     const nodetail = stob(core.getInput('nodetail'))
     const nocontext = nodetail || stob(core.getInput('nocontext'))
     const noprefix = nodetail || stob(core.getInput('noprefix'))
+    const notriggered = nodetail || stob(core.getInput('notriggered'))
 
     const inputs: Inputs = {
         webhooks: webhooks,
@@ -68,6 +70,7 @@ export function getInputs(): Inputs {
         avatar_url: core.getInput('avatar_url').trim(),
         nocontext: nocontext,
         noprefix: noprefix,
+        notriggered: notriggered,
         notimestamp: stob(core.getInput('notimestamp'))
     }
 
