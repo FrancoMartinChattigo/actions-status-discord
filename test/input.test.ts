@@ -15,6 +15,7 @@ describe("getInputs()", () => {
         process.env['INPUT_NOCONTEXT'] = 'false'
         process.env['INPUT_NOPREFIX'] = 'false'
         process.env['INPUT_NODETAIL'] = 'false'
+        process.env['INPUT_NOTRIGGERED'] = 'false'
         process.env['INPUT_NOTIMESTAMP'] = 'false'
 
         // no defaults in action.yml, but need for passing validation
@@ -25,6 +26,7 @@ describe("getInputs()", () => {
         const got = getInputs()
         expect(got.noprefix).toBe(false)
         expect(got.nocontext).toBe(false)
+        expect(got.notriggered).toBe(false)
         expect(got.webhooks).toStrictEqual(["https://env.webhook.invalid"])
         expect(got.status).toBe('success')
         expect(got.content).toBe('')
