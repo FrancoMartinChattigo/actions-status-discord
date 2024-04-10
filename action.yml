@@ -54,6 +54,10 @@ inputs:
     description: "Suppress detailed embed fields"
     required: false
     default: "false"
+  notriggered:
+    description: "Suppress triggered field"
+    required: false
+    default: "false"
   notimestamp:
     description: "Avoid appending timestamp"
     required: false
